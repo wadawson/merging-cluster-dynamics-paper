@@ -1,0 +1,8 @@
+# tex build files
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.ps
+*Notes.bib
