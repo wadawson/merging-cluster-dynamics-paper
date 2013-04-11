@@ -6,3 +6,6 @@
 *.log
 *.ps
 *Notes.bib
+
+# analysis results arrays
+*.pickle
