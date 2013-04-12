@@ -1,0 +1,53 @@
+#!/bin/bash
+
+###
+### inputs for the TSM module
+###
+N_mc=100000
+N_bins=100
+del_mesh=100
+TSM_mesh=200
+
+###
+### Cluster Mass distribution arrays
+###
+
+m1_mean=1.5e15
+m1_sigma=1.5e14
+
+c1_mean=7.2
+c1_sigma=0
+
+m2_mean=1.5e14
+m2_sigma=1.5e13
+
+c2_mean=2.0
+c2_sigma=0
+
+###
+### Cluster Redshift distribution arrays
+###
+
+z1_mean=0.29560
+z1_sigma=0.00023
+
+z2_mean=0.29826
+z2_sigma=0.00014
+
+###
+### Cluster centers and errors
+###
+
+del_r=0.72
+
+# Use the HST carto kernel radius / the signal to noise as an estimate of the
+# position error, units: Mpc
+r_sigma_1=0.035
+r_sigma_2=0.035
+
+
+for i in {0..19}
+do
+	prefix="bulletrun_$i"
+	python -c "import MCMAC; MCMAC.MCengine($N_mc,($m1_mean,$m1_sigma),($m2_mean,$m2_sigma),($z1_mean,$z1_sigma),($z2_mean,$z2_sigma),($del_r,$r_sigma_1,$r_sigma_2),prefix='$prefix',C1=($c1_mean,$c1_sigma),C2=($c2_mean,$c2_sigma),del_mesh=$del_mesh,TSM_mesh=$TSM_mesh)" &
+done
