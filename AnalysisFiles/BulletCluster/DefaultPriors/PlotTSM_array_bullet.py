@@ -15,8 +15,8 @@ from astrostats import biweightLoc,bcpcl
 import cosmo
 
 #prefix from TSM_MCcalc.py
-prefix = '/Users/dawson/Git/merging-cluster-dynamics-paper/AnalysisFiles/BulletCluster/bulletrun_'
-index = ('0','1','2','3')
+prefix = '/Users/dawson/Git/merging-cluster-dynamics-paper/AnalysisFiles/BulletCluster/DefaultPriors/bulletrun_'
+index = ('0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19')
 #Histogram bins
 N_bins_2d = 100
 N_bins_1d = 200
@@ -52,8 +52,8 @@ TSM_1 = loadcombo(prefix,index,'TSM_1')
 T = loadcombo(prefix,index,'T')
 prob = loadcombo(prefix,index,'prob')
 
-# for some reason 4 of the T, and thus prob, elements have nan values. Need to
-# remove these cases from all arrays
+# for some reason some of the T, and thus prob, elements have nan values. Need 
+# to remove these cases from all arrays
 mask_nan = ~numpy.isnan(T)
 m_1 = m_1[mask_nan]
 m_2 = m_2[mask_nan]
@@ -70,6 +70,18 @@ TSM_0 = TSM_0[mask_nan]
 TSM_1 = TSM_1[mask_nan]
 T = T[mask_nan]
 prob = prob[mask_nan]
+
+## Save the concatinated MC results to a text file
+#filename = prefix+'ConcatMCresults.txt'
+## note that the header option is not available in numpy versions prior to 1.7
+##headerline = '# m_1 (M_sun), m_2 (M_sun), z_1, z_2, d_proj (Mpc), v_rad_obs \
+##(km/s), alpha (degrees), v_3d_obs (km/s), d_3d (Mpc), v_3d_col (km/s), d_max \
+##(Mpc), TSM_0 (Gyr), TSM_1 (Gyr), T (Gyr), prob'
+##numpy.savetxt(filename,numpy.concatenate((m_1,m_2,z_1,z_2,d_proj,v_rad_obs,
+##alpha,v_3d_obs,d_3d,v_3d_col,d_max,TSM_0,TSM_1,T,prob),header=headerline))
+#numpy.savetxt(filename,numpy.concatenate((m_1,m_2,z_1,z_2,d_proj,v_rad_obs,
+#alpha,v_3d_obs,d_3d,v_3d_col,d_max,TSM_0,TSM_1,T,prob),axis=1))
+
 
 # Put masses in units of 10^14 solar masses
 m_1 /= 1e14
@@ -868,63 +880,63 @@ probinput = prob
 ##v_col TSC_0
 #histplot2dTSC(v_3d_col,TSM_0,'vcolTSC0',prob=prob,N_bins=N_bins_2d,histrange=(2500,4250,0,4),x_lim=(2500,4500),y_lim=(0,3),x_label='$v_{3D}(t_{col})$ (km s$^{-1}$)',y_label='$TSC_0$ (Gyr)')
 
-#### Examine the results of the most likely input values
-## select a subsample near the most likely input values
-## See "Bullet Cluster Parameter Input" table of paper
-#m_1_in_mean = 15
-#m_1_in_sigma = 1.5
-#m_2_in_mean = 1.5
-#m_2_in_sigma = 0.15
-#z_1_in_mean = 0.356211
-#z_1_in_sigma = 0.000342
-#z_2_in_mean = 0.360174
-#z_2_in_sigma = 0.00204
-#d_proj_in_mean = 0.72
-#d_proj_in_sigma = 0.025
-## Number of sigma to include
-#N_sigma = 0.09
-## Select only points near the peaks of each input parameters
-#mask_m_1 = numpy.logical_and(m_1<m_1_in_mean+N_sigma*m_1_in_sigma,m_1>m_1_in_mean-N_sigma*m_1_in_sigma)
-#mask_m_2 = numpy.logical_and(m_2<m_2_in_mean+N_sigma*m_2_in_sigma,m_2>m_2_in_mean-N_sigma*m_2_in_sigma)
-#mask_z_1 = numpy.logical_and(z_1<z_1_in_mean+N_sigma*z_1_in_sigma,z_1>z_1_in_mean-N_sigma*z_1_in_sigma)
-#mask_z_2 = numpy.logical_and(z_2<z_2_in_mean+N_sigma*z_2_in_sigma,z_2>z_2_in_mean-N_sigma*z_2_in_sigma)
-#mask_d_proj = numpy.logical_and(d_proj<d_proj_in_mean+N_sigma*d_proj_in_sigma,d_proj>d_proj_in_mean-N_sigma*d_proj_in_sigma)
-#mask_combo = mask_m_1*mask_m_2*mask_z_1*mask_z_2*mask_d_proj
-#print numpy.sum(mask_combo)
-#
-## Create a subsample of points near the location of \alpha
-#alpha_mean = 52
-#alpha_sigma = (72-31)/2
-#N_sigma_alpha = 0.00001
-#mask_alpha = numpy.logical_and(alpha<alpha_mean+N_sigma_alpha*alpha_sigma,alpha>alpha_mean-N_sigma_alpha*alpha_sigma)
-#print numpy.sum(mask_alpha)
-#
-#
-#fig = pylab.figure()
-#pointsize = 100
-#ax = fig.add_subplot(111)
-#histplot2d_part(ax,v_3d_col,TSM_0,prob=probinput,N_bins=N_bins_2d,histrange=(2500,4250,0,3.5),x_lim=(2500,4500),y_lim=(0,2.5))
-##ax.scatter(v_3d_col[mask_combo],TSM_0[mask_combo],s=40,c='#57E964',marker='d',label="Within Input {0}$\sigma$".format(N_sigma))
-#ax.scatter(v_3d_col[mask_alpha],TSM_0[mask_alpha],s=pointsize,c=m_1[mask_alpha],marker='o',linewidths=0.5,label="Within Input {0}$\sigma$".format(N_sigma_alpha),cmap='Purples')
-#ax.scatter(v_3d_col[mask_combo],TSM_0[mask_combo],s=pointsize,c=alpha[mask_combo],marker='^',linewidths=0.5,label="Within Input {0}$\sigma$".format(N_sigma),cmap='Greens')
-##v_bullet_sf07 = 3400
-##t_bullet_sf07 = 0.18
-##ax.scatter(v_bullet_sf07,t_bullet_sf07,s=140,c='k',marker='d',label="Bullet SF07")
-##ax.legend(loc=0)
-#pylab.xlabel('$v_{3D}(t_{col})$ (km s$^{-1}$)',size=16)
-#pylab.ylabel('$TSC_0$ (Gyr)',size=16)
-#fontsize=14
-#ax = pylab.gca()
-#for tick in ax.xaxis.get_major_ticks():
-#    tick.label1.set_fontsize(fontsize)
-#for tick in ax.yaxis.get_major_ticks():
-#    tick.label1.set_fontsize(fontsize)
-#pylab.savefig('peakvalues_revB.pdf')
-#
-#print 'For "most likely" case, alpha ='
-#print alpha[mask_combo]
-#print 'alpha_min = {0}'.format(numpy.min(alpha[mask_combo]))
-#print 'alpha_max = {0}'.format(numpy.max(alpha[mask_combo]))
+### Examine the results of the most likely input values
+# select a subsample near the most likely input values
+# See "Bullet Cluster Parameter Input" table of paper
+m_1_in_mean = 15
+m_1_in_sigma = 1.5
+m_2_in_mean = 1.5
+m_2_in_sigma = 0.15
+z_1_in_mean = 0.29560
+z_1_in_sigma = 0.00023
+z_2_in_mean = 0.29826
+z_2_in_sigma = 0.00014
+d_proj_in_mean = 0.72
+d_proj_in_sigma = 0.025
+# Number of sigma to include
+N_sigma = 0.13
+# Select only points near the peaks of each input parameters
+mask_m_1 = numpy.logical_and(m_1<m_1_in_mean+N_sigma*m_1_in_sigma,m_1>m_1_in_mean-N_sigma*m_1_in_sigma)
+mask_m_2 = numpy.logical_and(m_2<m_2_in_mean+N_sigma*m_2_in_sigma,m_2>m_2_in_mean-N_sigma*m_2_in_sigma)
+mask_z_1 = numpy.logical_and(z_1<z_1_in_mean+N_sigma*z_1_in_sigma,z_1>z_1_in_mean-N_sigma*z_1_in_sigma)
+mask_z_2 = numpy.logical_and(z_2<z_2_in_mean+N_sigma*z_2_in_sigma,z_2>z_2_in_mean-N_sigma*z_2_in_sigma)
+mask_d_proj = numpy.logical_and(d_proj<d_proj_in_mean+N_sigma*d_proj_in_sigma,d_proj>d_proj_in_mean-N_sigma*d_proj_in_sigma)
+mask_combo = mask_m_1*mask_m_2*mask_z_1*mask_z_2*mask_d_proj
+print numpy.sum(mask_combo)
+
+# Create a subsample of points near the location of \alpha
+alpha_mean = 49.63
+alpha_sigma = (72-26)/2
+N_sigma_alpha = 0.00001
+mask_alpha = numpy.logical_and(alpha<alpha_mean+N_sigma_alpha*alpha_sigma,alpha>alpha_mean-N_sigma_alpha*alpha_sigma)
+print numpy.sum(mask_alpha)
+
+
+fig = pylab.figure()
+pointsize = 100
+ax = fig.add_subplot(111)
+histplot2d_part(ax,v_3d_col,TSM_0,prob=probinput,N_bins=N_bins_2d,histrange=(2000,4250,0,3.5),x_lim=(2000,4500),y_lim=(0,3))
+#ax.scatter(v_3d_col[mask_combo],TSM_0[mask_combo],s=40,c='#57E964',marker='d',label="Within Input {0}$\sigma$".format(N_sigma))
+ax.scatter(v_3d_col[mask_alpha],TSM_0[mask_alpha],s=pointsize,c=m_1[mask_alpha],marker='o',linewidths=0.5,label="Within Input {0}$\sigma$".format(N_sigma_alpha),cmap='Purples')
+ax.scatter(v_3d_col[mask_combo],TSM_0[mask_combo],s=pointsize,c=alpha[mask_combo],marker='^',linewidths=0.5,label="Within Input {0}$\sigma$".format(N_sigma),cmap='Greens')
+#v_bullet_sf07 = 3400
+#t_bullet_sf07 = 0.18
+#ax.scatter(v_bullet_sf07,t_bullet_sf07,s=140,c='k',marker='d',label="Bullet SF07")
+#ax.legend(loc=0)
+pylab.xlabel('$v_{3D}(t_{col})$ (km s$^{-1}$)',size=16)
+pylab.ylabel('$TSC_0$ (Gyr)',size=16)
+fontsize=14
+ax = pylab.gca()
+for tick in ax.xaxis.get_major_ticks():
+    tick.label1.set_fontsize(fontsize)
+for tick in ax.yaxis.get_major_ticks():
+    tick.label1.set_fontsize(fontsize)
+pylab.savefig('peakvalues_revB.pdf')
+
+print 'For "most likely" case, alpha ='
+print alpha[mask_combo]
+print 'alpha_min = {0}'.format(numpy.min(alpha[mask_combo]))
+print 'alpha_max = {0}'.format(numpy.max(alpha[mask_combo]))
 
 #fig = pylab.figure()
 #ax = fig.add_subplot(111)
@@ -952,7 +964,7 @@ histplot1d(alpha,'alpha',prob=probinput,N_bins=N_bins_1d,histrange=None,x_lim=No
 
 histplot1d(d_3d,'d3d',prob=probinput,N_bins=N_bins_1d,histrange=None,x_lim=None,y_lim=None,x_label='d3d',y_label=ylab,legend=None)
 
-histplot1d(d_max,'dmax',prob=probinput,N_bins=N_bins_1d,histrange=(0,10),x_lim=None,y_lim=None,x_label='dmax',y_label=ylab,legend=None)
+histplot1d(d_max,'dmax',prob=probinput,N_bins=N_bins_1d,histrange=histrange_dmax,x_lim=None,y_lim=None,x_label='dmax',y_label=ylab,legend=None)
 
 histplot1d(v_3d_obs,'v3dobs',prob=probinput,N_bins=N_bins_1d,histrange=None,x_lim=None,y_lim=None,x_label='v_3D_obs',y_label=ylab,legend=None)
 
@@ -962,6 +974,6 @@ histplot1d(TSM_0,'TSC_0',prob=probinput,N_bins=N_bins_1d,histrange=None,x_lim=No
 
 histplot1d(TSM_1[mask_TSM_1],'TSC_1',prob=probinput[mask_TSM_1],N_bins=N_bins_1d,histrange=None,x_lim=None,y_lim=None,x_label='TSC_1',y_label=ylab,legend=None)
 
-histplot1d(T,'T',prob=probinput,N_bins=N_bins_1d,histrange=(0,30),x_lim=None,y_lim=None,x_label='T',y_label=ylab,legend=None)
+histplot1d(T,'T',prob=probinput,N_bins=N_bins_1d,histrange=histrange_T,x_lim=None,y_lim=None,x_label='T',y_label=ylab,legend=None)
 
 pylab.show()

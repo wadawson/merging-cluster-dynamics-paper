@@ -48,6 +48,6 @@ r_sigma_2=0.035
 
 for i in {0..3}
 do
-	prefix="bulletrun_$i"
+	prefix="bulletrun_small_$i"
 	python -c "import MCMAC; MCMAC.MCengine($N_mc,($m1_mean,$m1_sigma),($m2_mean,$m2_sigma),($z1_mean,$z1_sigma),($z2_mean,$z2_sigma),($del_r,$r_sigma_1,$r_sigma_2),prefix='$prefix',C1=($c1_mean,$c1_sigma),C2=($c2_mean,$c2_sigma),del_mesh=$del_mesh,TSM_mesh=$TSM_mesh)" &
 done
