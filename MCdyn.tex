@@ -412,8 +412,8 @@ I run a factor of a hundred more since it was computationally inexpensive and it
 The posterior of the Bullet Cluster's time-since-collision $TSC_0$ and $v_{\rm 3D}(t_{\rm col})$ parameters is shown in grayscale with dark and light blue contours representing 68\% and 95\% confidence, respectively.
 The green-scale triangles are from a subsample of the Monte Carlo population, which jointly satisfies the requirement of being drawn from $\pm 0.01 \sigma$ of the mean of each of the input parameters, i.e. the ``most likely'' values for the input parameters. 
 Despite representing the most probable input parameter values there is considerable spread in the inferred output parameters, with the subsample clearly tracing the ridge of the distribution. 
-The saturation of the triangles increases with increasing $\alpha$, from 15--85\,degrees.
-The purple-scale circles are from a subsample near the bi-weight location of $\alpha=52\pm0.0002$\,degrees, with the saturation of the circles increasing with increasing M$_{200_1}$.
+The saturation of the triangles increases with increasing $\alpha$, from 10--86\,degrees.
+The purple-scale circles are from a subsample near the bi-weight location of $\alpha=50\pm0.0002$\,degrees, with the saturation of the circles increasing with increasing M$_{200_1}$.
 While the length of the distribution is predominantly caused by uncertainty in $\alpha$ the width is predominantly caused by uncertainty in the input parameters.
 Despite the Bullet Cluster being one of the best measured dissociative mergers there is still considerable and complex uncertainty in its merger parameters, predominantly due to uncertainty in $\alpha$. 
 \label{fig_bcTSC}}
@@ -426,8 +426,8 @@ The main results of this analysis are that: 1) there is a great degree of covari
 
 The two-dimensional PDF of Figure \ref{fig_bcTSC} exemplifies the complexity of the covariance between the various merger parameters\footnote{Similar degrees of complex covariance exist for the other geometry, velocity and time parameters, see e.g.\,the results array in Appendix \ref{sec_bcresults}.}.
 The shape of the PDF is most easily understood in terms of the parameters' dependence on $\alpha$.
-This dependence is illustrated by the green-scale triangles that represent a subsample of the Monte Carlo population,  which jointly satisfies the requirement of being drawn from $\pm 0.01 \sigma$ of the mean of each of the input parameters, i.e. the ``most likely'' values for the input parameters.
-The saturation of the triangles increases with increasing $\alpha$, from 15--85\,degrees, clearly showing a monotonically increasing relationship with $TSC_0$ (see also Figure \ref{fig_bc_geovt}).
+This dependence is illustrated by the green-scale triangles that represent a subsample of the Monte Carlo population,  which jointly satisfies the requirement of being drawn from $\pm 0.13 \sigma$ of the mean of each of the input parameters, i.e. the ``most likely'' values for the input parameters.
+The saturation of the triangles increases with increasing $\alpha$, from 10--86\,degrees, clearly showing a monotonically increasing relationship with $TSC_0$ (see also Figure \ref{fig_bc_geovt}).
 For small $\alpha$ (light green triangles), Equation \ref{eq_v3Dobs} states that $v_{\rm 3D}(t_{\rm obs})$ must be large thus $v_{\rm 3D}(t_{\rm col})$ must also be large, and since Equation \ref{eq_d3D} states that $d_{\rm 3D}(t_{\rm obs})$ approaches the minimum possible observed separation, $d_{\rm proj}$, the $TSC_0$ must approach a minimum.
 Conversely for large $\alpha$ (dark green triangles), $d_{\rm 3D}(t_{\rm obs})$ becomes large increasing the time required to reach the observed state, and despite $v_{\rm 3D}(t_{\rm obs})$ approaching the minimum $v_{\rm rad}(t_{\rm obs})$ the collision velocity must increase for the subclusters to have been able to reach the larger $d_{\rm 3D}(t_{\rm obs})$.   
 
@@ -532,10 +532,10 @@ The green bar shows their result for $d_{\rm 3D}$ between 700 to 900\,kpc, which
 \end{figure}
 
 Application of this prior significantly improves the uncertainty in $TSC_0$ (180\% to 67\%)  and $v_{\rm 3D}(t_{\rm col})$ (28\% to 19\%), compare Figure \ref{fig_bcTSC} with Figure \ref{fig_bcTSC_added}.
-It essentially removes the possibility of a $TSC > 0.7$\,Gyr.
+It essentially removes the possibility of a $TSC > 0.6$\,Gyr.
 As expected from the $\alpha$ dependence shown by the green triangles in Figure \ref{fig_bcTSC} this prior also reduces the likelihood of $\alpha \gtrsim 50$\,degrees, which in turn affects both the location and uncertainty of $d_{\rm3D}$ and $v_{\rm 3D}(t_{\rm obs})$, see Table \ref{bulletresultparam}. 
 The remaining parameter estimates are predominantly unaffected by the prior, with only a few having their confidence limits affected as the result of their high end low probability tails being down weighted.
-Additionally there is now essentially zero probability that the bullet subcluster has reached the apoapsis and is on a return trajectory, since the 95\% lower confidence limit of $TSC_1$ is 1.0\,Gyr (see Table \ref{bulletresultparam}) and the prior essentially removes the possibility of a $TSC > 0.7$\,Gyr.
+Additionally there is now essentially zero probability that the bullet subcluster has reached the apoapsis and is on a return trajectory, since the 95\% lower confidence limit of $TSC_1$ is 0.9\,Gyr (see Table \ref{bulletresultparam}) and the prior essentially removes the possibility of a $TSC > 0.6$\,Gyr.
 I present the full results array, which includes the default analysis prior combined with this temperature boost prior, in Appendix \ref{sec_bcresults} and the compact parameter estimates in Table \ref{bulletresultparam}.
 
 According to this analysis the \citet{Springel:2007bg} results stated in \S\ref{sec_sfcomp} seem unlikely (see the black diamond of Figure \ref{fig_bcTSC_added}), however this is simply due to their definition of the ``observed state''.
@@ -590,7 +590,7 @@ For each Monte Carlo realization individual values are drawn randomly from each 
 This more complete analysis confirms that the \object{Musket Ball Cluster} merger is both significantly slower and further progressed compared to the \object{Bullet Cluster}, see Figure \ref{fig_mbc_TSC}.
 To estimate a lower limit on how much further progressed I perform an additional Monte Carlo analysis  for $TSC_{\rm 0_{Musket}}-TSC_{\rm 0_{Bullet}}$ assuming the marginalized $TSC_0$ distributions (see Appendices \ref{sec_bcresults} and \ref{sec_mbcresults}).
 This is a lower limit since the \object{Musket Ball} observations, unlike the \object{Bullet Clusters} observations, cannot rule out the case that its subclusters have reached the apoapsis and are on a return trajectory (61\% of the realizations have $TSC_1$ less than the age of the Universe at $z=0.53$).
-I find that  the \object{Musket Ball} is at least $0.8^{+1.2}_{-0.4}$\,Gyr ($3.5^{+4}_{-1.5}$ times) further progressed than the \object{Bullet Cluster}, see Figure \ref{fig_TSC0comparison}.
+I find that  the \object{Musket Ball} is at least $0.8^{+1.2}_{-0.4}$\,Gyr ($3.4^{+3.8}_{-1.4}$ times) further progressed than the \object{Bullet Cluster}, see Figure \ref{fig_TSC0comparison}.
 This is in line with the more approximate 3--5 times estimate of \citet{Dawson:2012dl}.
 The \object{Musket Ball}'s relatively large $TSC_0$ means that it has potential for providing tighter constraints on $\sigma_{\rm DM}$, since the expected offset between the galaxies and dark matter will increase with increasing $TSC_0$.
 However the expected offset also increases as a function of the cluster mass surface density and collision velocity.
@@ -611,7 +611,7 @@ The Musket Ball Cluster occupies a much different region of merger phase than th
 \epsscale{1}
 \plotone{TSC0subtraction.png}
 \caption{
-The histogram presents the $TSC_{\rm 0_{Musket}}-TSC_{\rm 0_{Bullet}}$ distribution from random draws of the respective marginalized $TSC_0$ distributions; showing that the Musket Ball Cluster merger is at least $0.8^{+1.2}_{-0.4}$\,Gyr ($3.5^{+4}_{-1.5}$ times) further progressed than the Bullet Cluster merger.
+The histogram presents the $TSC_{\rm 0_{Musket}}-TSC_{\rm 0_{Bullet}}$ distribution from random draws of the respective marginalized $TSC_0$ distributions; showing that the Musket Ball Cluster merger is at least $0.8^{+1.2}_{-0.4}$\,Gyr ($3.4^{+3.8}_{-1.4}$ times) further progressed than the Bullet Cluster merger.
 The black dashed line is the biweight-statistic location \citep{Beers:1982dp}, the 
 dark and light blue regions denote the bias-corrected  68\% and 95\% lower and upper confidence limits, respectively.
 \label{fig_TSC0comparison}}
@@ -669,7 +669,7 @@ In particular accurate measurement of the cluster gas properties can enable appr
 
 I have also applied this method to the \object{Musket Ball Cluster}, validating the approximate results of \citet{Dawson:2012dl}.
 Comparing the dynamic properties of the \object{Musket Ball} with those of the \object{Bullet} I have shown that the \object{Musket Ball} represents a significantly different volume of merger phase space.
-The \object{Musket Ball Cluster}, being $3.5^{+2.5}_{-1.5}$ further progressed than the \object{Bullet Cluster}, could potentially provide tighter constraints on $\sigma_{\rm DM}$ since the offset between galaxies and dark matter should increase with time post-merger for  $\sigma_{\rm DM}>0$.
+The \object{Musket Ball Cluster}, being $3.4^{+3.8}_{-1.4}$ times further progressed than the \object{Bullet Cluster}, could potentially provide tighter constraints on $\sigma_{\rm DM}$ since the offset between galaxies and dark matter should increase with time post-merger for  $\sigma_{\rm DM}>0$.
 And the larger the expected offset, the better the dark matter constraint when applying a method similar to \citet{Randall:2008hs}.
 
 \subsection{Suggested Uses of Method}\label{sec_suggestions}
@@ -683,7 +683,7 @@ Additionally it is inappropriate to simply simulate one realization of a dissoci
 Thus multiple simulations of each merger are required to properly represent the allowed phase space.
 One could conceivably reduce the number of required simulations by using the results of this method to select representative merger realizations that uniformly sample the merger phase space of interest (e.g. cluster mass, $v_{\rm 3D}(t_{\rm col})$, and $TSC_0$);
 then weight the results of each simulated realization by the integral of the corresponding local phase space PDF, as determined by this method.
-For example, one could estimate the uncertainty distribution of the $\sigma_{\rm DM}$ constraint inferred from SIDM simulations of the \object{Bullet Cluster} by weighting the constraint from each realization, where a realization with  $v_{\rm 3D}(t_{\rm col})$=3100\,km\,s$^{-1}$ and $TSC_0$=0.3\,Gyr would receive greater weight than one with $v_{\rm 3D}(t_{\rm col})$=4000\,km\,s$^{-1}$ and $TSC_0$=0.2\,Gyr, see Figure \ref{fig_bcTSC_added}.
+For example, one could estimate the uncertainty distribution of the $\sigma_{\rm DM}$ constraint inferred from SIDM simulations of the \object{Bullet Cluster} by weighting the constraint from each realization, where a realization with  $v_{\rm 3D}(t_{\rm col})$=2800\,km\,s$^{-1}$ and $TSC_0$=0.4\,Gyr would receive greater weight than one with $v_{\rm 3D}(t_{\rm col})$=4000\,km\,s$^{-1}$ and $TSC_0$=0.2\,Gyr, see Figure \ref{fig_bcTSC_added}.
 Thus the results of this method will not only inform efficient selection of realizations to model but will reduce the number of simulations required to properly sample the posterior PDF's.
 Nevertheless SIDM simulations of mock clusters need to be performed to determine how much acceptable values of $\sigma_{\rm DM}$ affect the inferred merger dynamics properties.
 
