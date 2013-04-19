@@ -556,7 +556,7 @@ mrand = numpy.random.randint(numpy.size(mTSM_0),size=f*numpy.max((numpy.size(TSM
 
 ###############################################
 
-#histplot1d(mTSM_0[mrand]/TSM_0[rand],'TSCcomparison_revB',prob=mprob[mrand]*prob[rand],N_bins=400,histrange=(0,30),x_lim=(0,20),y_lim=None,x_label='$TSC_{0_{Musket}}/TSC_{0_{Bullet}}$',y_label='Number of Realizations',legend=None)
+histplot1d(mTSM_0[mrand]/TSM_0[rand],'TSCcomparison_revB',prob=mprob[mrand]*prob[rand],N_bins=400,histrange=(0,30),x_lim=(0,20),y_lim=None,x_label='$TSC_{0_{Musket}}/TSC_{0_{Bullet}}$',y_label='Number of Realizations',legend=None)
 
 histplot1d(mTSM_0[mrand]-TSM_0[rand],'TSCsubtraction_revB',prob=mprob[mrand]*prob[rand],N_bins=400,histrange=None,x_lim=(-0.5,8),y_lim=None,x_label='$TSC_{0_{Musket}}-TSC_{0_{Bullet}}$ (Gyr)',y_label='Number of Realizations',legend=None)
 
