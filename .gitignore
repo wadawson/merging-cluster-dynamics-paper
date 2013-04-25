@@ -6,6 +6,7 @@
 *.log
 *.ps
 *Notes.bib
+*.synctex.gz
 
 # analysis results arrays
 *.pickle
