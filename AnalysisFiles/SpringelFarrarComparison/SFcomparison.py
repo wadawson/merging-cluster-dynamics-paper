@@ -40,6 +40,27 @@ d_3d = 0.62
 del_mesh=200
 TSM_mesh=400
 
+# Values from Springel & Farrar (2007) figure 4
+
+times = (1163,1180,1200,1220,1240,1260,1280,1300,1320,1340,1360,1380,1400,1420,
+         1440,1460,1480,1500)
+x_p_inch = (0,0.12,0.26,0.41,0.55,0.66,0.79,0.90,1.01,1.11,1.21,1.31,1.40,1.49,
+            1.57,1.66,1.74,1.81)
+v_x_inch = (1.76,1.74,1.70,1.64,1.56,1.47,1.37,1.27,1.16,1.06,0.97,0.88,0.81,
+            0.73,0.65,0.59,0.52,0.46)
+
+# convert measured quantaties into physical units (yes I realize that inches
+# are physical units)
+# scales of each figure
+inch2Mpc = 1.2/2.15
+inch2kms = 2500/2.33
+#zero pointing at time of collision and put in units of Gyr
+times = (numpy.array(times)-times[0])/1000 
+x_p_inch = numpy.array(x_p_inch)
+x_p_Mpc = x_p_inch*inch2Mpc
+v_x_inch = numpy.array(v_x_inch)
+v_x_kms = v_x_inch*inch2kms+1500
+
 # Constants and conversions
 G = 4.3*10**(-9) #newton's constant in units of Mpc*(km/s)**2 / M_sun
 c = 3e5 #speed of light km/s
