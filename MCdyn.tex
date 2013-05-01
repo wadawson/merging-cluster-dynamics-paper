@@ -324,30 +324,43 @@ Finally to compact the results I use the biweight-statistic (generally more robu
 
 For the purposes of checking the physical assumptions of the model I reanalyze the \citet{Springel:2007bg} model of the \object{Bullet Cluster}, comparing my dynamic parameter estimates with their hydrodynamic N-body simulation based estimates.
 For this analysis I run just their single case through the model (i.e.\,I do not perform a Monte Carlo analysis).
-Based on private communication from D. Clowe they represent the ``main'' and ``bullet'' subclusters as NFW halos with  M$_{200_1} = 1.5\times 10^{15} $\,M$_\sun$, c$_1=1.94$, M$_{200_2} = 1.5\times 10^{14}$\,M$_\sun$, and c$_2=7.12$, respectively.
-They note that the gas properties of their simulation most closely match the observed \object{Bullet Cluster} gas properties for the time step corresponding to a subcluster separation of $d_{3D}=625$\,kpc and  relative velocity of $v_{\rm 3D}(t_{\rm obs})=2700$\,km\,s$^{-1}$.
+They represent the ``main'' and ``bullet'' subclusters as NFW halos with  M$_{200_1} = 1.5\times 10^{15} $\,M$_\sun$, c$_1=1.94$, M$_{200_2} = 1.5\times 10^{14}$\,M$_\sun$, and c$_2=7.12$, respectively.
+They note that the gas properties of their simulation most closely match the observed \object{Bullet Cluster} gas properties for the time step corresponding to a subcluster separation of $d_{3D}=625$\,kpc and  relative velocity of $v_{\rm 3D}(t_{\rm obs})=2630$\,km\,s$^{-1}$.
 I define this as the ``observed'' state and use these values as input to the model.  
-I compare the results of the two models in Table \ref{modeltest}, assuming the \citet{Springel:2007bg} results as truth when calculating the percent error.
-There is better than 1\% agreement between the collision velocities and 10\% agreement between the TSC$_0$.  
-I expect better agreement between the collision velocity estimates, than between the $TSC_0$ estimates, since the velocity calculation comes from simply comparing the observed and collision states of the merger whereas the $TSC$ calculation requires the integration of the equations of motion between these two states.
+I compare the results of the two models in Figure \ref{fig_SFcomparison}, assuming the \citet{Springel:2007bg} results as truth when calculating the percent error.
+There is better than 4\% agreement between the collision velocities and 14\% agreement between the TSC$_0$.  
+I expect better agreement between the collision velocity estimates, than between the $TSC_0$ estimates, since the velocity calculation comes from simply comparing the observed and another state of the merger whereas the $TSC$ calculation requires the integration of the equations of motion between these two states.
 These results essentially validate many of the simplifying assumptions of the model (conservation of energy, and ignoring the affects of dynamical friction, tidal stripping of dark matter and gas during the collision).
 
-\begin{deluxetable}{lcc}
-\tablewidth{0pt}
-%\tabletypesize{\scriptsize}
-\tablecaption{Comparison of the model results with hydrodynamic simulation results\label{modeltest}}
+\begin{figure}
+\plotone{SFcomparison.png}
+\caption{
+Comparison of the model results (blue boxes) with they hydrodynamic simulation results of \citet[black circles;][]{Springel:2007bg} for the Bullet Cluster.  
+Treating the subhalo separation (i.e. the three-dimensional separation of the ``main'' and ``bullet'' subclusters) as the independent variable the top figure compares the velocity of the ``bullet'' relative to the ``main'' subcluster.  
+The bottom figure compares the time-since-observed state (TSO), where the ``observed'' state (dashed line) is defined by \citet{Springel:2007bg} as the time step in their simulation when the gas properties most closely match the observed Bullet Cluster gas properties.  
+The percent error in each case is calculated assuming the \citet{Springel:2007bg} results as truth.  
+While the model results are slightly biased, the bias appears stable and is roughly an order of magnitude smaller than the typical random error in the parameter estimates (see for example Table \ref{bulletresultparam}).  
+Note that the TSO percent error calculation understandably diverges near the arbitrary choice of time equal zero. 
+The \citet{Springel:2007bg} results are read directly from their Figure 4.
+\label{fig_SFcomparison}}
+\end{figure}
 
-\tablehead{
-\colhead{Work}     & \colhead{$v_{\rm 3D}(t_{\rm col})$}  & \colhead{TSC$_0$}  \\
-\colhead{}     &  \colhead{km\,s$^{-1}$}  & \colhead{Gyr}
-}
-\startdata
-\citet{Springel:2007bg} & 3400 &  0.18 \\
-This work  & 3380 & 0.198 \\
-\hline
-\% Error & 0.70 & 10\\ 
-\enddata
-\end{deluxetable}
+%\begin{deluxetable}{lcc}
+%\tablewidth{0pt}
+%%\tabletypesize{\scriptsize}
+%\tablecaption{Comparison of the model results with hydrodynamic simulation results\label{modeltest}}
+%
+%\tablehead{
+%\colhead{Work}     & \colhead{$v_{\rm 3D}(t_{\rm col})$}  & \colhead{TSC$_0$}  \\
+%\colhead{}     &  \colhead{km\,s$^{-1}$}  & \colhead{Gyr}
+%}
+%\startdata
+%\citet{Springel:2007bg} & 3400 &  0.18 \\
+%This work  & 3380 & 0.198 \\
+%\hline
+%\% Error & 0.70 & 10\\ 
+%\enddata
+%\end{deluxetable}
 
 
 \section{Bullet Cluster Dynamics}\label{sec_bullet}
@@ -402,8 +415,6 @@ I discuss this prior information and apply it ex post facto to the default prior
 I perform the analysis with 2,000,000 Monte Carlo realizations.  
 Parameter estimates converge to better than a fraction of a percent with only 20,000 realizations ($\sim6$\,CPU\,hours).
 I run a factor of a hundred more since it was computationally inexpensive and it provides a data sample to which I can apply any number of conceivable posterior PDF's and still maintain sub-percent statistical accuracy.
-
-\clearpage
 
 \begin{figure}
 \epsscale{1.15}
