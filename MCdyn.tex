@@ -716,9 +716,10 @@ Similarly, studying global merger dynamic properties may resolve the mystery of 
 While this method has advantages over existing methods there is room for considerable improvement.
 For example the method could be improved through the elimination of some of the simplifying assumptions of the model (see \S\ref{sec_model}).
 One could attempt to incorporate subcluster mass accretion physics in a manner similar to the work of \citet{Angus:2007em} or attempt to account for the possibility of a non-zero impact parameter.
-The latter is potentially more difficult to properly incorporate.  In addition to complicating the equations of motion it is unclear what impact parameter prior is reasonable. 
-For example, given a two-subcluster merger it might be expected that near head-on collisions are more likely, but without a study of mergers in cosmological N-body simulations it is unclear how much more likely.
-Additionally as the impact parameter increases the amount of gas dissociated from each subcluster will decrease, but without a systematic study of various mergers in hydrodynamic simulations it is unclear exactly what prior an observed large dissociation of gas should infer.
+To incorporate the latter one must: 1) add angular momentum terms to the equations of momentum,  which is entirely feasible, and 2) prescribe a reasonable impact parameter prior.
+\citet{Randall:2002kk} nicely outline how to determine an impact parameter PDF for halo mergers of variable mass by utilizing the PDF of the dimensionless \emph{spin parameter}, determined from linear theory of the growth of structure \citep{Peebles:1993vp} and simulations \citep{Bullock2001}.
+However, this prior should be adjusted to account for the amount of gas dissociated during the observed merger, since this amount will decrease as the impact parameter increases.
+Without a systematic study of various mergers in hydrodynamic simulations it is unclear exactly what adjustment an observed large dissociation of gas should infer.
 
 Another significant extension to the model could be the inclusion of SIDM physics.  
 As mentioned in the previous section, one of the promising uses of this method is to suggest which mergers might provide the best $\sigma_{\rm DM}$ constraining power.  
