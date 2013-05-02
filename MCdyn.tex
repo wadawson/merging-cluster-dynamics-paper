@@ -106,7 +106,7 @@ While the best understanding of merging system dynamics comes from N-body simula
 Simple analytic models exist but the assumptions of these methods invalidate their results near the collision time, plus error propagation of the highly correlated merger parameters is unfeasible.
 To address these weaknesses I develop a Monte Carlo method to discern the merger dynamics of systems and propagate the uncertainty of the measured cluster parameters in an accurate and Bayesian manner.
 I introduce this method, verify it against existing numerical simulations, and apply it to two known dissociative mergers: \object{1ES 0657-558} (\object{Bullet Cluster}) and \object{DLSCL J0916.2+2951} (\object{Musket Ball Cluster}).
-I find that this method surpasses existing analytic models, providing dynamic parameter and uncertainty estimates throughout the merger history, and is in better than 10\% agreement with N-body simulations.
+I find that this method surpasses existing analytic models --- providing dynamic parameter and uncertainty estimates throughout the merger history that are in agreement with a hydrodynamic N-body merger simulation at the 10\% level.
 This coupled with minimal required \emph{a priori} information (subcluster mass, redshift, and projected separation) and relatively fast computation ($\sim$6 CPU\,hours) makes this method ideal for large samples of dissociative merging clusters.
 
 
@@ -186,7 +186,7 @@ However, they have still had to severely limit the phase space probed (fixing me
 %%%% Task
 
 With these weaknesses in mind I present a new method\footnote{This method is similar to the one used by \citet{Dawson:2012dl}, although with several improvements (see \S\ref{sec_musketball}).}  for analyzing the dynamics of observed dissociative mergers.
-My primary objectives are to 1) obtain a solution valid near the collision state, 2) fully estimate the covariance matrix for the merger parameters, 3) be able to analyze a dissociative merger on the order of a day using a typical desktop computer, and 4) obtain better than 10\% accuracy; all assuming that only the most general merger observables and their uncertainty are known: mass of each subcluster, redshift of each subcluster, and projected separation of the subclusters.
+My primary objectives are to 1) obtain a solution valid near the collision state, 2) fully estimate the covariance matrix for the merger parameters, 3) be able to analyze a dissociative merger on the order of a day using a typical desktop computer, and 4) obtain approximately 10\% accuracy; all assuming that only the most general merger observables and their uncertainty are known: mass of each subcluster, redshift of each subcluster, and projected separation of the subclusters.
 
 %%%% Object
 
@@ -678,7 +678,7 @@ $T$	&	Gyr	&	4.8	&	2.9	--	10.4	&	2.2	--	22.7	\\
 
 I have introduced a new method for determining the dynamic properties and associated uncertainty of dissociative cluster mergers given only the most general merger observables: mass of each subcluster, redshift of each subcluster, and projected separation the subclusters.
 I find that this method addresses the primary weaknesses of existing methods, namely enabling accurate parameter estimation and propagation of uncertainty near the collision state with a convergent solution achieved in $\sim$6\,CPU\,hours. 
-I have confirmed that the two NFW halo model is capable of achieving the required percent level accuracy by direct comparison with N-body hydrodynamic simulations.
+I have confirmed that the two NFW halo model is capable of achieving the required 10\% level accuracy by direct comparison with an N-body hydrodynamic simulation.
 
 In applying this method to the \object{Bullet Cluster} I not only determined its merger dynamic parameters but found that the bulk of uncertainty in these parameters is due to uncertainty in $\alpha$, the angle of the merger with respect to the plane of the sky.
 Analyses that fail to account for the uncertainty in $\alpha$ (all existing N-body simulations of the \object{Bullet Cluster}) will significantly underestimate the uncertainty in their results.
