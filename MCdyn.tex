@@ -341,17 +341,6 @@ However, to have any confidence in this bias correction the model results should
 Note that the better agreement between the velocity estimates than between the TSO estimates is to be expected since the velocity calculation (essentially Equation \ref{eq_v3Dcol}) comes from simply comparing the observed and another state of the merger whereas the TSO calculation (Equation \ref{eq_deltat}) requires integration between these two states.
 The results of this comparative study essentially validate many of the simplifying assumptions of the model (conservation of energy, and ignoring the affects of dynamical friction, tidal stripping of dark matter and gas during the collision).
 
-As an aside it should be noted that for this comparison I use the \citet{Springel:2007bg} NFW halo parameters that represent the state of the halos prior to merger.
-Ideally I should use the NFW parameters representative of the state of the halos at $t_{\rm obs}$, however these properties were not reported in their paper.
-From Figure 5 of \citet{Springel:2007bg} some insight into the time variability of the halo parameters can be gained.
-Since the depth each halo's gravitational potential at $\sim r_{200}$ does not change appreciably throughout the merger, it can be inferred that M$_{200}$ of each halo does not change. 
-However, the gravitational potential near the center of each halo deepens by $\sim 25\%$ during and after the collision.
-This can be interpreted as the concentration of each halo increasing.
-Thus for the comparison of my model with the \citet{Springel:2007bg} hydrodynamic simulation to be more appropriate I should have used halos with larger concentrations.
-Doing so actually brings my model results more in-line with the simulation results.
-If for example I increase the concentration of the ``bullet'' halo from 1.94 to 3 and the concentration of the ``main'' halo from 7.12 to 8, then the percent error for the relative velocity of the halos reduces to $\lesssim 1\%$ and the percent error for the TSO reduces to $\sim 10\%$. 
-Thus the comparative results of Figure \ref{fig_SFcomparison} are conservative with respect to the variability of the halo properties throughout the merger.
-
 \begin{figure}
 \plotone{SFcomparison.png}
 \caption{
@@ -365,6 +354,17 @@ Note that the TSO percent error calculation understandably diverges near the arb
 The \citet{Springel:2007bg} results are read directly from their Figure 4.
 \label{fig_SFcomparison}}
 \end{figure}
+
+As an aside it should be noted that for this comparison I use the \citet{Springel:2007bg} NFW halo parameters that represent the state of the halos prior to merger.
+Ideally I should use the NFW parameters representative of the state of the halos at $t_{\rm obs}$, however these properties were not reported in their paper.
+From Figure 5 of \citet{Springel:2007bg} some insight into the time variability of the halo parameters can be gained.
+Since the depth each halo's gravitational potential at $\sim r_{200}$ does not change appreciably throughout the merger, it can be inferred that M$_{200}$ of each halo does not change. 
+However, the gravitational potential near the center of each halo deepens by $\sim 25\%$ during and after the collision.
+This can be interpreted as the concentration of each halo increasing.
+Thus for the comparison of my model with the \citet{Springel:2007bg} hydrodynamic simulation to be more appropriate I should have used halos with larger concentrations.
+Doing so actually brings my model results more in-line with the simulation results.
+If for example I increase the concentration of the ``bullet'' halo from 1.94 to 3 and the concentration of the ``main'' halo from 7.12 to 8, then the percent error for the relative velocity of the halos reduces to $\lesssim 1\%$ and the percent error for the TSO reduces to $\sim 10\%$. 
+Thus the comparative results of Figure \ref{fig_SFcomparison} are conservative with respect to the variability of the halo properties throughout the merger.
 
 %\begin{deluxetable}{lcc}
 %\tablewidth{0pt}
@@ -650,15 +650,6 @@ dark and light blue regions denote the bias-corrected  68\% and 95\% lower and u
 \label{fig_TSC0comparison}}
 \end{figure}
 
-Note that just as a temporal prior was justified for the \object{Bullet Cluster} based on the observed shock front and increased temperature/mass estimate, I could apply a similar yet opposite prior to the \object{Musket Ball} since the temperature/mass estimate is consistent with the weak lensing inferred mass (additionally no shock front is observed).  
-According to \citet{Randall:2002kk} if the cluster mass and inferred X-ray temperature or luminosity cluster mass are approximately the same then $TSC_0 \gtrsim 2 t_{\rm sc}$, which in the case of the \object{Musket Ball} means $TSC_0 \gtrsim 1.75$\,Gyr.
-While this is consistent with my $TSC_0$ estimate for the \object{Musket Ball}, it is not entirely appropriate to apply this prior since the X-ray observations are relatively shallow and cannot confidently rule out a temperature and luminosity boost \citep{Dawson:2012dl}.
-However it is conceivable that this line of reasoning would be applicable with deeper X-ray observations, either for the \object{Musket Ball} or similar dissociative mergers.
-
-%\emph{Should I mention the fraction of realizations that have an allowable $TSC_1$, should I compare this with the Bullet cluster?}
-
-
-
 \begin{deluxetable*}{lcccc}
 \tablewidth{0pt}
 %\tabletypesize{\scriptsize}
@@ -687,6 +678,12 @@ $T$	&	Gyr	&	4.8	&	2.9	--	10.4	&	2.2	--	22.7	\\
 \tablenotetext{c}{61\% of the realizations with a valid $TSC_0$ (i.e.\,less than the age of the Universe at the cluster redshift) have a valid $TSC_1$, meaning that it is possible that the Musket Ball Cluster is being observed in the ``incoming'' state.}
 \end{deluxetable*}
 
+Note that just as a temporal prior was justified for the \object{Bullet Cluster} based on the observed shock front and increased temperature/mass estimate, I could apply a similar yet opposite prior to the \object{Musket Ball} since the temperature/mass estimate is consistent with the weak lensing inferred mass (additionally no shock front is observed).  
+According to \citet{Randall:2002kk} if the cluster mass and inferred X-ray temperature or luminosity cluster mass are approximately the same then $TSC_0 \gtrsim 2 t_{\rm sc}$, which in the case of the \object{Musket Ball} means $TSC_0 \gtrsim 1.75$\,Gyr.
+While this is consistent with my $TSC_0$ estimate for the \object{Musket Ball}, it is not entirely appropriate to apply this prior since the X-ray observations are relatively shallow and cannot confidently rule out a temperature and luminosity boost \citep{Dawson:2012dl}.
+However it is conceivable that this line of reasoning would be applicable with deeper X-ray observations, either for the \object{Musket Ball} or similar dissociative mergers.
+
+%\emph{Should I mention the fraction of realizations that have an allowable $TSC_1$, should I compare this with the Bullet cluster?}
  
 \section{Summary and Discussion}\label{summary}
 
