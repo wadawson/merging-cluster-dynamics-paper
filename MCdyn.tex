@@ -340,6 +340,17 @@ However, to have any confidence in this bias correction the model results should
 Note that the better agreement between the velocity estimates than between the TSO estimates is to be expected since the velocity calculation (essentially Equation \ref{eq_v3Dcol}) comes from simply comparing the observed and another state of the merger whereas the TSO calculation (Equation \ref{eq_deltat}) requires integration between these two states.
 The results of this comparative study essentially validate many of the simplifying assumptions of the model (conservation of energy, and ignoring the affects of dynamical friction, tidal stripping of dark matter and gas during the collision).
 
+As an aside it should be noted that for this comparison I use the \citet{Springel:2007bg} NFW halo parameters that represent the state of the halos prior to merger.
+Ideally I should use the NFW parameters representative of the state of the halos at $t_{\rm obs}$, however these properties were not reported in their paper.
+From Figure 5 of \citet{Springel:2007bg} some insight into the time variability of the halo parameters can be gained.
+Since the depth each halo's gravitational potential at $\sim r_{200}$ does not change appreciably throughout the merger, it can be inferred that M$_{200}$ of each halo does not change. 
+However, the gravitational potential near the center of each halo deepens by $\sim 25\%$ during and after the collision.
+This can be interpreted as the concentration of each halo increasing.
+Thus for the comparison of my model with the \citet{Springel:2007bg} hydrodynamic simulation to be more appropriate I should have used halos with larger concentrations.
+Doing so actually brings my model results more in-line with the simulation results.
+If for example I increase the concentration of the ``bullet'' halo from 1.94 to 3 and the concentration of the ``main'' halo from 7.12 to 8, then the percent error for the relative velocity of the halos reduces to $\lesssim 1\%$ and the percent error for the TSO reduces to $\sim 10\%$. 
+Thus the comparative results of Figure \ref{fig_SFcomparison} are conservative with respect to the variability of the halo properties throughout the merger.
+
 \begin{figure}
 \plotone{SFcomparison.png}
 \caption{
