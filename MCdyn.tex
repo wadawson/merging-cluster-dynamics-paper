@@ -136,11 +136,12 @@ Initially the offset between the galaxies and dark matter will increase with $TS
 Additionally it is important to know the velocity so that dark matter candidates with velocity dependent cross-sections \citep[e.g.][]{Colin:2002ku,Vogelsberger:2012dy} can be constrained.
 
 However there is no way to directly observe the dynamic merger parameters of principal interest: the three-dimensional relative velocity ($v_{\rm 3D}$) and separation ($d_{\rm 3D}$) of the subclusters as a function of time, their maximum separation ($d_{\rm max}$), the period between collisions ($T$), and the time-since-collision ($TSC$).
-Observations are generally limited to: their projected separation ($d_{\rm proj}$), the line-of-sight (LOS) velocity of each subcluster ($v_i$) as inferred from their redshifts, and their mass ($M_i$) or projected surface mass density profile.
-In addition to the obvious inability to measure a change in the merger state, it is difficult to constrain the dynamic parameters of interest even in the observed state. This is due to the general inability to constrain the angle of the merger axis with respect to the plane of the sky ($\alpha$), see Figure \ref{fig_mergerdiagram}.
+Observations are generally limited to: the subcluster projected separation ($d_{\rm proj}$), the line-of-sight (LOS) velocity of each subcluster ($v_i$) as inferred from their redshifts, and their mass ($M_i$) or projected surface mass density profile.
+In addition to the obvious inability to measure a change in the merger state, it is difficult to constrain the dynamic parameters of interest even in the observed state. 
+This is due to the general inability to constrain the angle of the merger axis with respect to the plane of the sky ($\alpha$), see Figure \ref{fig_mergerdiagram}.
 
 For the \object{Bullet Cluster} it was originally thought that estimates of the Mach number of the cluster merger through X-ray observations of the gas shock feature \citep[e.g.][]{Markevitch:2006wv} could be used to estimate $v_{\rm 3D}$, and in conjunction with measurements of the relative LOS velocities then estimate $\alpha$.
-Similarly, the gas pressure differential across cold front features seen in some merging clusters has also been used to estimate the Mach number of the cluster merger \citep[e.g.][]{Vikhlinin:2003wy}. 
+Similarly, the gas pressure differential across cold front features seen in some merging clusters have also been used to estimate the Mach number of the cluster merger \citep[e.g.][]{Vikhlinin:2003wy}. 
 However, \citet{Springel:2007bg} showed that the Mach number only translates to an upper limit on $v_{\rm 3D}$, and in the case of the \object{Bullet Cluster} they showed that the Mach inferred velocity could be a factor of $\sim2$ larger than the true $v_{\rm 3D}$.
 There is potential for constraining $\alpha$ using polarization measurements of radio relics \citep{Ensslin:1998tx}, which are associated with some cluster mergers \citep[e.g.\,][]{vanWeeren:2010dn} but not all \citep[e.g.\,][]{Russell:2011hn}. 
 Even if for some mergers radio relics provide constraints on $\alpha$, dynamic models are still needed in order to ascertain the dynamic properties of the merger throughout time.
@@ -193,7 +194,7 @@ My primary objectives are to 1) obtain a solution valid near the collision state
 %%%% Object
 
 In \S\ref{sec_method} I define a method for analyzing the dynamics of observed dissociative mergers.
-In \S\ref{sec_sfcomp} I verify this method with existing results from hydrodynamic N-body simulations.
+In \S\ref{sec_sfcomp} I verify this method with existing results from a hydrodynamic N-body simulation.
 In \S\ref{sec_bullet} I apply this method to the \object{Bullet Cluster} and in \S\ref{sec_musketball} I apply this method to the \object{Musket Ball Cluster} (\object{DLSCL J0816.2+2951}) and contrast its dynamics with those of the \object{Bullet Cluster}.
 Finally in \S \ref{summary} I summarize my findings, discuss their implications for the constraints on dark matter and suggest other science that will benefit from the introduced method.
 Throughout this paper I assume $\Omega_{\Lambda}=0.7$, $\Omega_m=0.3$, and $H=70$\,km\,s$^{-1}$\,Mpc$^{-1}$.
@@ -243,7 +244,7 @@ As \citet{Nusser:2008iw} shows, a global overdense region (10 times denser than 
 The model also ignores dynamical friction.
 \citet{Farrar:2007fc} found that including dynamical friction accounted for an $\sim$10\% reduction in the inferred collision velocity of the \object{Bullet Cluster} in their analytic treatment.
 This is potentially concerning since dynamical friction is inversely proportional to the relative velocity of the merger, thus it may become even more important for mergers slower than the \object{Bullet Cluser}.
-However in \S \ref{sec_sfcomp} I compare the results of my method with those from hydrodynamic N-body simulations and show that the net effect of all simplifications (including ignoring dynamical friction, tidal stripping of mass and gas mass lost during the collision) are negligible, suggesting that dynamic friction is less important than the analytic estimates of \citet{Farrar:2007fc} suggest.
+However in \S \ref{sec_sfcomp} I compare the results of my method with those from a hydrodynamic N-body simulation and show that the net effect of all simplifications (including ignoring dynamical friction, tidal stripping of mass and gas mass lost during the collision) are negligible, suggesting that dynamic friction is less important than the analytic estimates of \citet{Farrar:2007fc} suggest.
  
 
 \subsection{Monte Carlo Analysis}\label{sec_MCanalysis}
@@ -335,7 +336,7 @@ The \citet{Springel:2007bg} simulation results (black circles) for these paramet
 
 I compare the model results (blue boxes) with the \citet{Springel:2007bg} simulation results, and assume their results as truth when calculating the percent error, see Figure \ref{fig_SFcomparison}.
 There is better than 4\% agreement between $v_{\rm 3D}$ and 14\% agreement between the TSO.
-While the model results are biased, the bias appears stable and is and is roughly an order of magnitude smaller than the typical random error in the parameter estimates (see for example Table \ref{bulletresultparam}).
+While the model results are biased, the bias appears stable and is roughly an order of magnitude smaller than the typical random error in the parameter estimates (see for example Table \ref{bulletresultparam}).
 Given the stability of the bias it is conceivable that it could be corrected in the model results.
 However, to have any confidence in this bias correction the model results should be compared with a range of merger scenarios, which is beyond the scope of this current work.
 Note that the better agreement between the velocity estimates than between the TSO estimates is to be expected since the velocity calculation (essentially Equation \ref{eq_v3Dcol}) comes from simply comparing the observed and another state of the merger whereas the TSO calculation (Equation \ref{eq_deltat}) requires integration between these two states.
@@ -344,10 +345,10 @@ The results of this comparative study essentially validate many of the simplifyi
 \begin{figure}
 \plotone{SFcomparison.png}
 \caption{
-Comparison of the model results (blue boxes) with they hydrodynamic simulation results of \citet[black circles;][]{Springel:2007bg} for the Bullet Cluster.  
+Comparison of the model results (blue boxes) with the hydrodynamic simulation results of \citet[black circles;][]{Springel:2007bg} for the Bullet Cluster.  
 The top figure is a comparison of the velocity of the ``bullet'' relative to the ``main'' subcluster, with the subhalo separation (i.e. the three-dimensional separation of the ``main'' and ``bullet'' subclusters) as the independent variable.  
 The bottom figure is a comparison of the time-since-observed state (TSO), where the ``observed'' state (dashed line) is defined by \citet{Springel:2007bg} as the time step in their simulation when the gas properties most closely match the observed Bullet Cluster gas properties.
-Times prior (post) to the observed state have negative (positive) values.  
+Times prior(post) to the observed state have negative(positive) values.  
 The percent error in each case is calculated assuming the \citet{Springel:2007bg} results as truth.  
 While the model results are biased, the bias appears stable and is roughly an order of magnitude smaller than the typical random error in the parameter estimates (see for example Table \ref{bulletresultparam}).  
 Note that the TSO percent error calculation understandably diverges near the arbitrary choice of time equal zero. 
@@ -355,7 +356,7 @@ The \citet{Springel:2007bg} results are read directly from their Figure 4.
 \label{fig_SFcomparison}}
 \end{figure}
 
-As an aside it should be noted that for this comparison I use the \citet{Springel:2007bg} NFW halo parameters that represent the state of the halos prior to merger.
+As an aside it should be noted that for this comparison I use the \citet{Springel:2007bg} NFW halo parameters that represent the state of the halos prior to collision.
 Ideally I should use the NFW parameters representative of the state of the halos at $t_{\rm obs}$, however these properties were not reported in their paper.
 From Figure 5 of \citet{Springel:2007bg} some insight into the time variability of the halo parameters can be gained.
 Since the depth each halo's gravitational potential at $\sim r_{200}$ does not change appreciably throughout the merger, it can be inferred that M$_{200}$ of each halo does not change. 
@@ -364,7 +365,7 @@ This can be interpreted as the concentration of each halo increasing.
 Thus for the comparison of my model with the \citet{Springel:2007bg} hydrodynamic simulation to be more appropriate I should have used halos with larger concentrations.
 Doing so actually brings my model results more in-line with the simulation results.
 If for example I increase the concentration of the ``bullet'' halo from 1.94 to 3 and the concentration of the ``main'' halo from 7.12 to 8, then the percent error for the relative velocity of the halos reduces to $\lesssim 1\%$ and the percent error for the TSO reduces to $\sim 10\%$. 
-Thus the comparative results of Figure \ref{fig_SFcomparison} are conservative with respect to the variability of the halo properties throughout the merger.
+Thus the comparative results of Figure \ref{fig_SFcomparison} should be considered conservative with respect to the variability of the halo properties throughout the merger.
 
 %\begin{deluxetable}{lcc}
 %\tablewidth{0pt}
@@ -727,9 +728,9 @@ Similarly, studying global merger dynamic properties may resolve the mystery of 
 While this method has advantages over existing methods there is room for considerable improvement.
 For example the method could be improved through the elimination of some of the simplifying assumptions of the model (see \S\ref{sec_model}).
 One could attempt to incorporate subcluster mass accretion physics in a manner similar to the work of \citet{Angus:2007em} or attempt to account for the possibility of a non-zero impact parameter.
-To incorporate the latter one must: 1) add angular momentum terms to the equations of momentum,  which is entirely feasible, and 2) prescribe a reasonable impact parameter prior.
+To incorporate the latter one must: 1) add angular momentum terms to the equations of motion,  which is entirely feasible, and 2) prescribe a reasonable impact parameter prior.
 \citet{Randall:2002kk} nicely outline how to determine an impact parameter PDF for halo mergers of variable mass by utilizing the PDF of the dimensionless \emph{spin parameter}, determined from linear theory of the growth of structure \citep{Peebles:1993vp} and simulations \citep{Bullock:2001kb}.
-However, this prior should be adjusted to account for the amount of gas dissociated during the observed merger, since this amount will decrease as the impact parameter increases.
+However, this prior should be adjusted to account for the samount of gas dissociated during the observed merger, since this amount will decrease as the impact parameter increases.
 Without a systematic study of various mergers in hydrodynamic simulations it is unclear exactly what adjustment an observed large dissociation of gas should infer.
 
 Another significant extension to the model could be the inclusion of SIDM physics.  
